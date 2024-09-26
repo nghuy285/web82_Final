@@ -1,0 +1,35 @@
+body {
+  background-image: linear-gradient(to top, orange,yellow);
+  height:100vh;
+}
+.bar {
+  display: flex;
+  /* margin: 10px 30px; */
+  justify-content: space-between;
+  border-bottom: solid rgb(201, 201, 201) 1px;
+}
+.menu .bar img {
+  margin-top: 2.5%;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+}
+.menu {
+  font-family: roboto;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  height: 450px;
+  width: 800px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.popular {
+  color: rgb(36, 35, 35);
+  margin-left: 5%;
+  position: relative;
+  top:5px;
+}
