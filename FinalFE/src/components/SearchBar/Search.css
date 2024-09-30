@@ -1,0 +1,38 @@
+.movie-card-wrapper {
+  background: white;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  margin-left: 10px;
+  width: 95%;
+  text-overflow: ellipsis;
+}
+.search-page-container {
+  background-color: #fbfbfb;
+}
+.movie-card-wrapper:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.movie-card-wrapper img {
+  width: 100px;
+  top: 5px;
+  height: 150px;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+}
+
+.movie-grid {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  gap: 40px;
+  background-color: white;
+}
+.SearchCss {
+  width: 340px;
+  position: relative;
+  left: 10%;
+}

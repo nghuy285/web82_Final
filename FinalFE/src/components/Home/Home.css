@@ -1,0 +1,10 @@
+.head {
+  display: flex;
+  justify-content: space-around;
+}
+.menuAvatar {
+  position: relative;
+  width: fit-content;
+  right: 1.8rem;
+  top: 3rem;
+}

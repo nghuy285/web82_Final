@@ -1,0 +1,32 @@
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: #ffff;
+  width: 25.6rem;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+}
+
+.NavItem {
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+.NavItem:hover {
+  color: #007bff;
+}
+
+.NavItem.active {
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+}

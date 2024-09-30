@@ -1,35 +1,23 @@
 body {
-  background-image: linear-gradient(to top, orange,yellow);
-  height:100vh;
-}
-.bar {
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
   display: flex;
-  /* margin: 10px 30px; */
-  justify-content: space-between;
-  border-bottom: solid rgb(201, 201, 201) 1px;
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  align-items: center; /* Canh giữa theo chiều dọc */
+  min-height: 100vh; /* Chiều cao ít nhất là 100% chiều cao của khung nhìn */
+  font-family: "Roboto", sans-serif;
 }
-.menu .bar img {
-  margin-top: 2.5%;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 30px;
-  height: 30px;
-}
-.menu {
-  font-family: roboto;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  height: 450px;
-  width: 800px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.popular {
-  color: rgb(36, 35, 35);
-  margin-left: 5%;
+
+#root {
+  max-width: 430px; /* Chiều rộng cố định tương tự như trên mobile */
+  width: 100%; /* Đảm bảo root chiếm hết chiều rộng khi dưới 430px */
+  height: 932px; /* Chiều cao mô phỏng giao diện mobile */
+  margin: 0 auto; /* Canh giữa theo chiều ngang */
+  padding: 0rem;
+  background-color: white; /* Nền màu trắng như trên mobile */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ để tạo hiệu ứng khối */
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung vượt quá chiều cao */
+  border-radius: 10px; /* Tạo góc bo tròn nếu muốn */
   position: relative;
-  top:5px;
 }

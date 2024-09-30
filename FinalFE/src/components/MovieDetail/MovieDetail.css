@@ -1,0 +1,54 @@
+.movieDetail {
+  padding: 20px;
+  background-color: white;
+}
+
+.movieDetail .movie-poster img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+.movieDetail .movie-info {
+  text-align: left;
+  font-size: larger;
+}
+.book-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  height: 4rem;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 24rem;
+  position: absolute;
+  bottom: 1rem;
+  font-size: large;
+}
+.yearInfo {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 0;
+  background-color: #fbfafa;
+}
+.yearInfo strong {
+  color: grey;
+  font-weight: lighter;
+  font-size: medium;
+}
+.yearInfo p {
+  position: relative;
+  font-weight: bold;
+  margin: 0;
+}
+.sec1 {
+  display: flex;
+  gap: 10%;
+}

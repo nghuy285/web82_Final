@@ -1,0 +1,38 @@
+.login {
+  font-family: Roboto;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.login p {
+  color: #b9b3b4;
+}
+.login img {
+  width: 150px;
+}
+.login Form {
+  margin-left: 4%;
+}
+
+.register {
+  font-family: Roboto;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+}
+.register p {
+  color: #b9b3b4;
+}
+.register img {
+  width: 150px;
+}
+.register Form {
+  margin-left: 7%;
+}
+.register button {
+  width: 100vw;
+  position: relative;
+  right: 11rem;
+}

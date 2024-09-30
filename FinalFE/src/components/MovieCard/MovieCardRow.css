@@ -1,0 +1,11 @@
+.movieInfo p {
+  color: grey;
+  position: relative;
+  bottom: 20px;
+}
+
+.movieInfo {
+  position: relative;
+  left: 10px;
+  cursor: pointer;
+}
