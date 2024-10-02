@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Modal, Form, Input, message } from "antd";
 import axios from "axios";
+import NavbarHead from "../Navbar/NavbarHead";
 
 const MovieManager = () => {
   const [movies, setMovies] = useState([]);
@@ -122,75 +123,78 @@ const MovieManager = () => {
   ];
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Movie Manager</h2>
-      <Button
-        type="primary"
-        onClick={() => showModal()}
-        style={{ marginBottom: 20 }}
-      >
-        Add Movie
-      </Button>
-      <Table
-        columns={columns}
-        dataSource={movies}
-        loading={loading}
-        pagination={{
-          pageSize: 6,
+    <div>
+      <NavbarHead />
+      <div style={{ padding: "20px" }}>
+        <h2>Movie Manager</h2>
+        <Button
+          type="primary"
+          onClick={() => showModal()}
+          style={{ marginBottom: 20 }}
+        >
+          Add Movie
+        </Button>
+        <Table
+          columns={columns}
+          dataSource={movies}
+          loading={loading}
+          pagination={{
+            pageSize: 5,
 
-          position: ["bottomCenter"],
-        }}
-        rowKey="_id"
-      />
+            position: ["bottomCenter"],
+          }}
+          rowKey="_id"
+        />
 
-      <Modal
-        title={currentMovie ? "Edit Movie" : "Add Movie"}
-        open={isModalVisible}
-        onOk={handleOk}
-        onCancel={() => setIsModalVisible(false)}
-      >
-        <Form form={form} layout="vertical">
-          <Form.Item
-            name="name"
-            label="Title"
-            rules={[
-              { required: true, message: "Please input the movie title!" },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            name="year"
-            label="Year"
-            rules={[
-              { required: true, message: "Please input the movie year!" },
-            ]}
-          >
-            <Input type="number" />
-          </Form.Item>
-          <Form.Item
-            name="time"
-            label="Time (minutes)"
-            rules={[
-              { required: true, message: "Please input the movie duration!" },
-            ]}
-          >
-            <Input type="number" />
-          </Form.Item>
-          <Form.Item
-            name="introduce"
-            label="Introduce"
-            rules={[
-              {
-                required: true,
-                message: "Please input the movie introduction!",
-              },
-            ]}
-          >
-            <Input.TextArea />
-          </Form.Item>
-        </Form>
-      </Modal>
+        <Modal
+          title={currentMovie ? "Edit Movie" : "Add Movie"}
+          open={isModalVisible}
+          onOk={handleOk}
+          onCancel={() => setIsModalVisible(false)}
+        >
+          <Form form={form} layout="vertical">
+            <Form.Item
+              name="name"
+              label="Title"
+              rules={[
+                { required: true, message: "Please input the movie title!" },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              name="year"
+              label="Year"
+              rules={[
+                { required: true, message: "Please input the movie year!" },
+              ]}
+            >
+              <Input type="number" />
+            </Form.Item>
+            <Form.Item
+              name="time"
+              label="Time (minutes)"
+              rules={[
+                { required: true, message: "Please input the movie duration!" },
+              ]}
+            >
+              <Input type="number" />
+            </Form.Item>
+            <Form.Item
+              name="introduce"
+              label="Introduce"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the movie introduction!",
+                },
+              ]}
+            >
+              <Input.TextArea />
+            </Form.Item>
+          </Form>
+        </Modal>
+      </div>
     </div>
   );
 };
