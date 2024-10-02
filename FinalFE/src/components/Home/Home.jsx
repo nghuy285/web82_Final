@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { UserOutlined } from "@ant-design/icons";
-import { Dropdown, message } from "antd";
+import { Dropdown, message, Pagination } from "antd";
 import MovieList from "../MovieList/MovieList.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
 import SearchBar from "../SearchBar/SearchBar.jsx";
-
+import MovieCard from "../MovieCard/MovieCard.jsx";
+import { getMovies } from "../../../api/movieApi.jsx";
 const handleMenuClick = (e) => {
   message.info("Click on menu item.");
   console.log("click", e);
@@ -36,13 +37,25 @@ const menuProps = {
 
 const Home = () => {
   const [user, setUser] = useState(null);
+  const [movies, setMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+  const fetchData = async () => {
+    const response = await getMovies();
+
+    setMovies(response);
+  };
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("User"));
     if (userData) {
       setUser(userData);
     }
+    fetchData();
   }, []);
-
+  const indexOfLastMovie = currentPage * itemsPerPage;
+  const indexOfFirstMovie = indexOfLastMovie - itemsPerPage;
+  const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
+  const totalPages = Math.ceil(movies.length / itemsPerPage);
   return (
     <div>
       <div className="head">
@@ -50,19 +63,6 @@ const Home = () => {
           {user ? <h1>Welcome, {user.userName}!</h1> : <h1>Welcome</h1>}
           <p>Book your favourite movie</p>
         </div>
-
-        <Dropdown.Button
-          menu={menuProps}
-          placement="bottom"
-          icon={<UserOutlined />}
-          className="menuAvatar"
-          onClick={() => {
-            localStorage.removeItem("token");
-            window.location.reload();
-          }}
-        >
-          Log out
-        </Dropdown.Button>
       </div>
       <SearchBar></SearchBar>
       <div className="bodyHome">
@@ -71,7 +71,32 @@ const Home = () => {
           <MovieList></MovieList>
         </div>
       </div>
-
+      <h2>ALL MOVIES</h2>
+      <div className="movies-container">
+        {currentMovies.map((movie) => (
+          <MovieCard
+            key={movie._id}
+            movie={movie}
+            cardWidth={140}
+            cardHeight={140}
+          />
+        ))}
+      </div>
+      <div className="pagination-container">
+        <Pagination
+          current={currentPage}
+          pageSize={itemsPerPage}
+          total={movies.length}
+          onChange={(page) => setCurrentPage(page)}
+          showSizeChanger={false}
+          style={{
+            marginTop: "20px",
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        />
+      </div>
       <Navbar></Navbar>
     </div>
   );

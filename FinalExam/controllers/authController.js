@@ -22,7 +22,7 @@ const auth = {
       };
 
       const accessToken = jwt.sign(user, SecretKey, {
-        expiresIn: 60 * 5,
+        expiresIn: 60 * 60,
       });
 
       res.status(200).send({

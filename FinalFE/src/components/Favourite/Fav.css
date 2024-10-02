@@ -1,0 +1,53 @@
+.favorites-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.favorites-page h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.favorites-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.favorites-list .movie-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.favorites-list .movie-card:hover {
+  transform: scale(1.05);
+}
+
+.favorites-list .movie-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.favorites-list .movie-card .movie-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.favorites-list .movie-card .movie-info h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.favorites-list .movie-card .movie-info p {
+  font-size: 1em;
+  color: #666;
+}

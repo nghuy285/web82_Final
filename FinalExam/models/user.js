@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     enum: ["Admin", "Manager", "Customer"],
     default: "Customer",
   },
+  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "movie" }],
 });
 
 const UserModel = mongoose.model("User", userSchema);

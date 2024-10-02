@@ -7,6 +7,8 @@ const NavbarHead = (props) => {
   let title = "";
   if (location.pathname.startsWith("/movies/")) {
     title = "Movie Details";
+  } else if (location.pathname.startsWith("/profiles/")) {
+    title = "profiles";
   } else {
     switch (location.pathname) {
       case "/login":
@@ -24,6 +26,10 @@ const NavbarHead = (props) => {
       case "/home":
         title = "Home";
         break;
+      case "/theater":
+        title = "Theater";
+        break;
+
       default:
         title = "App";
     }

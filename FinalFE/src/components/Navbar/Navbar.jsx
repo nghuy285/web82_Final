@@ -12,7 +12,9 @@ import {
 const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const user = JSON.parse(localStorage.getItem("User"));
+  const id = user._id;
+  console.log(id);
   const navItems = [
     {
       path: "/home",
@@ -30,7 +32,7 @@ const Navbar = () => {
       icon: <FontAwesomeIcon icon={faSearch} />,
     },
     {
-      path: "/profiles",
+      path: `/profiles/${id}`,
       label: "Profiles",
       icon: <FontAwesomeIcon icon={faUser} />,
     },

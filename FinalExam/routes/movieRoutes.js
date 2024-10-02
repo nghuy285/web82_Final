@@ -3,8 +3,13 @@ import { movieControllers } from "../controllers/movieController.js";
 import { valToken } from "../middleware/token.js";
 import upload from "../utils/multer.js";
 const router = express.Router();
+import roleMiddleware from "../middleware/roleMiddleware.js";
+router.post(
+  "/",
+  valToken,
 
-router.post("/", valToken, movieControllers.addMovie);
+  movieControllers.addMovie
+);
 router.get("/", movieControllers.getMovies);
 router.get("/detail/:id", movieControllers.getMovieById);
 router.get("/search", movieControllers.searchMovie);

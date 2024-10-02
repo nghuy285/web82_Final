@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import movieRoutes from "./routes/movieRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import threaterRoutes from "./routes/threaterRoutes.js";
 import cors from "cors";
 
 dotenv.config();
@@ -17,6 +18,7 @@ const PORT = process.env.PORT || 3000;
 app.use("/auth", authRoutes);
 app.use("/movies", movieRoutes);
 app.use("/users", userRoutes);
+app.use("/theaters", threaterRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
